@@ -1,0 +1,1397 @@
+@font-face {
+    font-family: 'Poppins Light';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/poppins-v20-latin-300.woff') format('woff')
+}
+@font-face {
+    font-family: 'Poppins Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v20-latin-regular.woff') format('woff')
+}
+@font-face {
+    font-family: 'Poppins Medium';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/poppins-v20-latin-500.woff') format('woff')
+}
+@font-face {
+    font-family: 'Poppins Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/poppins-v20-latin-700.woff') format('woff')
+}
+@font-face {
+    font-family: 'Poppins ExtraBold';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/poppins-v20-latin-900.woff') format('woff')
+}
+@font-face {
+    font-family: 'Moms';
+    font-style: normal;
+    src: url('../fonts/moms_typewriter.woff') format('woff')
+}
+@import "colors";
+@import "fonts";
+@mixin text-font ($ff,$fst,$fw,$fs,$lh) {
+    font: {
+        family: $ff;
+        style: $fst;
+        weight: $fw;
+        size: $fs;
+    }
+    line-height: $lh;
+}
+@mixin flex ($ds,$jc,$ai) {
+    display: $ds;
+    justify-content: $jc;
+    align-items: $ai;
+}
+@mixin grid ($gcs,$gce,$grs,$gre) {
+    grid-column-start: $gcs;
+    grid-column-end: $gce;
+    grid-row-start: $grs;
+    grid-row-end: $gre;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+li:last-child {
+    margin: 0;
+}
+button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.button {
+    @include flex(flex,center,center);
+    background-color: $red;
+    color: $white;
+    width: 100%;
+    transition: all ease-in-out 0.6s;
+}
+.button:hover {
+    box-shadow: 0 10px 40px -5px #9F1919;
+}
+.wrapper {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.container {
+    max-width: 1288px;
+    width: 100%;
+    margin: 0 auto;
+}
+.head {
+    max-width: 1920px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 40px 0 143px 0 ;
+    background-image: url("../image/bg__blur.png");
+    background-repeat: no-repeat;
+    background-size: 1600px auto;
+    background-position: 0 0;
+    z-index: 1;
+}
+.head::before {
+    content: url("../image/bg__main.png");
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+}
+.head__container {
+    @include flex(flex,space-between,center);
+    max-width: 1288px;
+    width: 100%;
+    margin: 0 auto 72px;
+}
+.head__items {
+    @include flex(flex,space-between,center);
+    max-width: 240px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 70px;
+    @include text-font($fontPoppinsRegular,normal,400,16px,120%);
+    color: $white;
+}
+.head__text {
+    position: relative;
+}
+.head__text::before {
+    position: absolute;
+    top: -70px;
+    left: 0;
+}
+.head__text-peace::before {
+    content: url("../image/head__peace.svg");
+    left: -20px;
+}
+.head__text-love::before {
+    content: url("../image/head__love.svg");
+    left: -15px;
+}
+.head__text-guitar::before {
+    content: url("../image/head__guitar.svg");
+    left: 3px;
+}
+.head__ukraine {
+    @include text-font($fontPoppinsRegular,normal,400,14px,120%);
+    color: $white;
+    box-sizing: border-box;
+    padding-right: 32px;
+    position: relative;
+    max-width: 170px;
+    width: 100%;
+}
+.head__ukraine::after {
+    content: url("../image/head__ukraine.svg");
+    position: absolute;
+    top: -55px;
+    right: -100px;
+}
+.head__wrapper {
+    position: relative;
+}
+.head__title {
+    max-width: 990px;
+    width: 100%;
+    @include text-font($fontPoppinsExtraBold,normal,900,90px,120%);
+    color: $white;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.head__block-index {
+    z-index: 2;
+}
+.head__subtitle {
+    text-transform: uppercase;
+    font-family: $fontMoms;
+    font-size: 60px;
+    line-height: 120%;
+    color: $white;
+    max-width: 710px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.head__description {
+    @include text-font($fontPoppinsRegular,normal,400,20px,120%);
+    color: $white;
+}
+.head__block,
+.shop__colors {
+    width: 100%;
+    @include flex(flex,space-between,center);
+}
+.head__block {
+    max-width: 630px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 50px 0 50px 0;
+}
+.head__wrapper-form {
+    max-width: 363px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.head__label {
+    max-width: 363px;
+    width: 100%;
+}
+.head__input {
+    max-width: 363px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.41);
+    border-radius: 5px 0 0 5px;
+    padding: 30px 0 30px 30px;
+}
+.head__input::placeholder {
+    @include text-font($fontPoppinsRegular,normal,400,18px,120%);
+    color: $text-color;
+}
+.button__join {
+    min-height: 82px;
+    @include text-font($fontPoppinsMedium,normal,500,20px,120%);
+    max-width: 267px;
+    border-radius: 5px;
+}
+.head__span {
+    font-family: $fontPoppinsLight;
+    margin-left: 6px;
+}
+.button__video {
+    max-width: 101px;
+    width: 100%;
+    min-height: 101px;
+    box-sizing: border-box;
+    position: relative;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #4E4E3B;
+}
+.button__video::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-left: 40px solid $yellow;
+    border-bottom: 20px solid transparent;
+}
+.button__video::after {
+    content: "Watch our video";
+    @include text-font($fontPoppinsRegular,normal,400,20px,120%);
+    color: $white;
+    position: absolute;
+}
+.head__button-play::after {
+    top: 40%;
+    right: -185%;
+}
+.head__box {
+    max-width: 142px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 46px 0 10px 0;
+    position: absolute;
+    background: rgba(60, 41, 15, 0.39);
+    border-radius: 10px;
+    z-index: -1;
+}
+.head__service {
+    max-width: 122px;
+    width: 100%;
+    margin: 0 auto;
+    @include text-font($fontPoppinsRegular,normal,400,20px,120%);
+    color: $white;
+    text-align: center;
+}
+.head__box-share {
+    top: 5%;
+    right: 7%;
+}
+.head__box-join {
+    bottom: 29%;
+    right: 33%;
+}
+.head__box-donate {
+    bottom: 3%;
+    right: -10%;
+    z-index: 2;
+}
+.block__bg {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-image: url("../image/block__bg.png");
+    background-position: 0 0;
+    background-size: 1620px auto;
+    background-repeat: no-repeat;
+}
+.additional {
+    display: none;
+}
+.about {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 200px 0 180px 0;
+    background-image: url("../image/about__logo.png");
+    background-size: 257px auto;
+    background-repeat: no-repeat;
+    background-position: 670px 1120px;
+}
+.about__title {
+    @include text-font($fontPoppinsBold,normal,700,50px,120%);
+    color: $white;
+    margin-bottom: 100px;
+
+}
+.about__wrapper {
+    @include flex(flex,space-between,flex-start);
+    margin-bottom: 220px;
+}
+.about__texts {
+    max-width: 407px;
+    width: 100%;
+    @include text-font($fontPoppinsRegular,normal,400,16px,120%);
+    color: $text-color;
+}
+.about__text {
+    margin-bottom: 10px;
+}
+.about__text_last {
+    margin: 0;
+}
+.about__content {
+    max-width: 685px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(316px,1fr));
+    grid-template-rows: repeat(2,1fr);
+    column-gap: 43px;
+    row-gap: 68px;
+}
+.about__box {
+    box-sizing: border-box;
+    padding: 60px 0 10px 10px;
+    background-color: transparent;
+}
+.about__subtitle {
+    @include text-font($fontPoppinsBold,normal,700,20px,120%);
+    color: $white;
+    margin-bottom: 20px;
+}
+.about__description {
+    @include text-font($fontPoppinsRegular,normal,400,16px,120%);
+    color: $text-color;
+}
+.about__inner {
+    @include flex(flex,space-between,flex-start);
+}
+.about__span {
+    font-family: $fontMoms;
+    font-size: 30px;
+    line-height: 120%;
+}
+.about__learn {
+    max-width: 393px;
+    width: 100%;
+    @include text-font($fontPoppinsRegular,normal,400,18px,120%);
+    color: $text-color;
+}
+.guitar {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 0 240px 0;
+    background-image: url("../image/guitar__bg.png");
+    background-repeat: no-repeat;
+    background-size: 1600px auto;
+    background-position: 10px 10px;
+}
+.guitar__container {
+    box-sizing: border-box;
+    @include flex(flex,center,center);
+    min-height: 608px;
+    margin-bottom: 50px;
+}
+.about__button::after {
+    width: 100%;
+    bottom: -50px;
+    left: -31px;
+    min-width: 165px;
+}
+.button__join {
+    margin: 0 auto;
+}
+.help {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 80px 0 80px 0;
+    position: relative;
+    background-color: $white;
+}
+.help::before {
+    content: url("../image/help__pooster.jpg");
+    position: absolute;
+    top: -60px;
+    right: 155px;
+    z-index: 1;
+}
+.help__container {
+    max-width: 562px;
+    width: 100%;
+    color: $help-text;
+}
+.help__title {
+    font-family: $fontMoms;
+    font-size: 40px;
+    line-height: 120%;
+    margin-bottom: 60px;
+}
+.help__text {
+    @include text-font($fontPoppinsRegular,normal,400,18px,120%);
+    margin-bottom: 20px;
+}
+.help__text_last {
+    margin-bottom: 60px;
+}
+.help__button {
+    max-width: 249px;
+    min-height: 80px;
+    margin: 0;
+}
+.donations {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 247px 0 180px 0;
+}
+.donations__title {
+    @include text-font($fontPoppinsBold,normal,700,50px,120%);
+    color: $white;
+    margin-bottom: 100px;
+}
+.donations__inner {
+    @include flex(flex,space-between,flex-start);
+}
+.donations__form {
+    max-width: 410px;
+    width: 100%;
+}
+.donations__subtitle {
+    @include text-font($fontPoppinsBold,normal,700,20px,120%);
+    color: $white;
+    margin-bottom: 30px;
+}
+.donations__box {
+    max-width: 410px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.donations__input {
+    max-width: 410px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #4E4E3B;
+    box-sizing: border-box;
+    padding: 23px 0 23px 30px;
+    background: transparent;
+     color: $white;
+}
+.donations__input::placeholder {
+    @include text-font($fontPoppinsRegular,normal,400,18px,120%);
+    color: $text-color;
+}
+.donations__button {
+    margin: 0;
+    max-width: 410px;
+    min-height: 69px;
+}
+.donations__button-span {
+    font-size: 14px;
+    font-family: $fontPoppinsLight;
+}
+.donations__info {
+    max-width: 627px;
+    width: 100%;
+}
+.donations__subtitle-info {
+    margin-bottom: 10px;
+}
+.donations__text {
+    @include text-font($fontPoppinsRegular,normal,400,18px,120%);
+    color: $text-color;
+    margin-bottom: 30px;
+}
+.donations__list {
+    max-width: 627px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.donations__item {
+    @include text-font($fontPoppinsRegular,normal,400,18px,120%);
+    color: $text-color;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 20px;
+    @include flex(flex,space-between,center);
+    margin-bottom: 20px;
+}
+.donations__item::before {
+    content: "";
+    display: block;
+    width: 11px;
+    height: 11px;
+    background-color: $yellow-element;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    border-radius: 50%;
+}
+.donations__span-item {
+    @include text-font($fontPoppinsMedium,normal,500,18px,120%);
+    color: $white;
+}
+.donations__wrapper {
+    max-width: 627px;
+    width: 100%;
+    box-sizing: border-box;
+    @include flex(flex,space-between,center);
+    @include text-font($fontPoppinsRegular,normal,400,16px,120%);
+    color: $white;
+    margin-bottom: 20px;
+}
+.donations__statistic {
+    max-width: 627px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 22px 0 22px 20px;
+    min-height: 69px;
+    background: $statistic-bg;
+    border-radius: 10px;
+}
+.donations__statistic::before {
+    content: '';
+    display: block;
+    background-color: $green;
+    max-width: 202px;
+    width: 100%;
+    min-height: 25px;
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 10px 50px 5px $green;
+}
+.donations__statistic::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 41px;
+    background: #516155;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateY(-50%);
+}
+.shop {
+    max-width: 1600px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 200px;
+    position: relative;
+}
+.shop__title {
+    font-family: $fontMoms;
+    font-size: 50px;
+    line-height: 120%;
+    color: $white;
+    margin-bottom: 98px;
+}
+.shop__slider {
+    position: relative;
+}
+.shop__box {
+    box-sizing: border-box;
+    padding-bottom: 40px;
+    max-width: 409px;
+    width: 100%;
+    margin-right: 31px;
+}
+.shop .slick-list {
+    margin-right: -31px;
+}
+.shop__slick-prev,
+.shop__slick-next {
+    position: absolute;
+    top: -130px;
+    right: 0;
+}
+.shop__slick-prev {
+    right: 90px;
+}
+
+.shop__photo {
+    max-width: 100%;
+    min-height: auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.shop__photo-tablet,
+.shop__photo-mobile {
+    display: none;
+}
+.shop__logos,
+.shop__wrapper {
+    max-width: 312px;
+    width: 100%;
+    margin: 0 auto 46px;
+}
+.shop__logos {
+    @include flex(flex,space-between,center);
+}
+.shop__wrapper {
+    @include flex(flex,space-between,flex-end);
+}
+.shop__logo {
+    @include text-font($fontPoppinsBold,normal,700,20px,120%);
+    color: $white;
+}
+.shop__text {
+    font-family: $fontMoms;
+    font-size: 20px;
+    line-height: 120%;
+    color: $white;
+}
+.shop__sizes {
+    max-width: 195px;
+    width: 100%;
+    @include flex(flex,flex-start,center);
+}
+.shop__subtitle {
+    @include text-font($fontPoppinsRegular,normal,400,16px,120%);
+    color: $white;
+    margin-right: 11px;
+}
+.shop__blocks {
+    max-width: 150px;
+    width: 100%;
+    @include flex(flex,space-around,center);
+    box-sizing: border-box;
+    padding: 5px 0 5px 0;
+}
+.shop__label {
+    @include text-font($fontPoppinsRegular,normal,400,16px,120%);
+    color: $white;
+    position: relative;
+    z-index: 1;
+}
+
+.shop__input {
+    position: absolute;
+    max-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.shop__span-size {
+    position: relative;
+    z-index: 2;
+    transition: all ease-in-out 0.6s;
+}
+.shop__span-size::before,
+.shop__span-color::before {
+    content: "";
+    display: block;
+    background: #373737;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -1px;
+    transform: scale(0);
+    transition: all ease-in-out  0.6s;
+    z-index: -1;
+}
+.shop__span-size-s::before  {
+    left: -7px;
+}
+.shop__span-size-m::before  {
+    left: -6px;
+}
+.shop__span-size-l::before  {
+    left: -8px;
+}
+.shop__span-size-xl::before {
+    left: -4px;
+}
+.shop__input:checked + .shop__span-size::before {
+    transform: scale(1);
+}
+.shop__colors {
+    max-width: 75px;
+}
+.shop__span-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    position: relative;
+    transition: all ease-in-out 0.6s;
+}
+.shop__span-color-black {
+    background: $black;
+}
+.shop__span-color-white {
+    background: $white;
+}
+.shop__input:checked + .shop__span-color::before {
+    transform: scale(1);
+}
+.shop__span-color::before {
+    top: -3px;
+    left: -3px;
+}
+.shop__inner {
+    max-width: 312px;
+    width: 100%;
+    margin: 0 auto;
+    @include flex(flex,space-between,center);
+}
+.shop__button {
+    max-width: 195px;
+    min-height: 60px;
+    margin: 0;
+}
+.shop__price {
+    @include text-font($fontPoppinsBold,normal,700,30px,120%);
+    color: $white;
+}
+.reference {
+    max-width: 1600px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-bottom: 130px;
+}
+.reference__title {
+    @include text-font($fontPoppinsExtraBold,normal,900,60px,120%);
+    text-transform: uppercase;
+    color: $white;
+    max-width: 643px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.reference__span {
+    font-family: $fontMoms;
+    font-size: 40px;
+}
+.reference__block {
+    margin: 0 auto;
+    padding: 70px 0 70px 0;
+}
+.footer {
+    max-width: 1600px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-bottom: 174px;
+    text-align: center;
+}
+.footer__container {
+    color: $text-color;
+}
+.footer__items {
+    margin: 0 auto 52px;
+}
+.footer__text {
+    @include text-font($fontPoppinsRegular,normal,400,16px,120%);
+    margin: 0 auto 20px;
+    max-width: 629px;
+    width: 100%;
+}
+.footer__text_last {
+    margin-bottom: 50px;
+}
+.footer__copy {
+    @include text-font($fontPoppinsRegular,normal,400,16px,120%);
+    margin-bottom: 30px;
+}
+.footer__design {
+    @include text-font($fontPoppinsRegular,normal,400,14px,120%);
+}
+.footer__span {
+    text-decoration: underline;
+}
+@media all and (max-width: 768px) {
+    .container {
+        max-width: 690px;
+    }
+    .head {
+        max-width: 768px;
+        padding: 35px 0 48px 0;
+        background-image: url(../image/bg__blur-tablet.png);
+        background-size: 768px auto;
+        overflow: hidden;
+    }
+    .head__text::before {
+        top: -55px;
+    }
+    .head::before {
+        content: url(../image/bg__main-tablet.png);
+        bottom: -30px;
+        right: 0;
+    }
+    .head__items {
+        max-width: 177px;
+    }
+    .head__text-peace::before {
+        content: url(../image/head__peace-tablet.svg);
+        left: -10px;
+    }
+    .head__text-love::before {
+        content: url(../image/head__love-tablet.svg);
+        left: -6px;
+    }
+    .head__text-guitar::before {
+        content: url(../image/head__guitar-tablet.svg);
+        left: 10px;
+    }
+    .head__title {
+        max-width: 471px;
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    .head__subtitle {
+        font-size: 33px;
+        margin-bottom: 10px;
+    }
+    .head__description {
+        font-size: 14px;
+    }
+    .head__block {
+        max-width: 390px;
+        padding: 20px 0 20px 0;
+    }
+    .head__wrapper-form {
+        max-width: 204px;
+    }
+    .button__join {
+        min-height: 60px;
+        font-size: 16px;
+    }
+    .head__input {
+        max-width: 204px;
+        padding: 19px 0 19px 10px;
+    }
+    .head__input::placeholder {
+        font-size: 14px;
+    }
+    .button__video {
+        max-width: 61px;
+        min-height: 61px;
+    }
+    .button__video::before {
+        top: 30%;
+        left: 35%;
+        border-top: 13px solid transparent;
+        border-left: 26px solid #FFE999;
+        border-bottom: 13px solid transparent;
+    }
+    .button__video::after {
+        font-size: 14px;
+
+    }
+    .head__button-play::after {
+        top: 40%;
+        left: 120%;
+        min-width: 115px;
+    }
+    .head__box {
+        max-width: 100px;
+        padding: 34px 0 10px 0;
+    }
+    .head__service {
+        max-width: 90px;
+        font-size: 14px;
+    }
+    .head__box-share {
+        top: 0;
+        right: 0;
+    }
+    .head__box-join {
+        bottom: 32%;
+        right: 28%;
+    }
+    .head__box-donate {
+        bottom: 2%;
+        right: -4%;
+    }
+    .about {
+        padding: 130px 0 62px 0;
+        background-image: url(../image/about__logo-tablet.png);
+        background-size: 193px auto;
+        background-position: 281px 1006px;
+    }
+    .about__title {
+        margin-bottom: 70px;
+    }
+    .about__wrapper {
+       flex-direction: column;
+        margin-bottom: 140px;
+    }
+    .about__texts {
+        max-width: 570px;
+    }
+    .about__box {
+        padding: 60px 0 10px 0;
+    }
+    .about__title-description {
+        max-width: 253px;
+        margin: 0;
+    }
+    .about__learn {
+        max-width: 235px;
+        font-size: 16px;
+    }
+    .guitar {
+        padding: 0 0 130px 0;
+        background-image: url(../image/guitar__bg-tablet.png);
+        background-size: 768px auto;
+        background-position: 0 0;
+    }
+    .guitar__container {
+        min-height: 320px;
+        margin-bottom: 50px;
+    }
+    .about__button::after {
+        bottom: -30px;
+        left: -52px;
+    }
+    .guitar__button {
+        min-height: 80px;
+    }
+    .help::before {
+        content: url(../image/help__pooster-tablet.jpg);
+        position: absolute;
+        top: auto;
+        bottom: -137px;
+        right: 0;
+        z-index: 1;
+    }
+    .help {
+        padding: 80px 0 80px 0;
+    }
+    .help__container {
+        max-width: 583px;
+    }
+    .help__title {
+        margin-bottom: 30px;
+    }
+    .help__text {
+        max-width: 320px;
+        width: 100%;
+    }
+    .help__text-special {
+        max-width: 583px;
+        width: 100%;
+    }
+    .donations {
+        padding: 220px 0 130px 0;
+    }
+    .donations__title {
+        margin-bottom: 70px;
+    }
+    .donations__inner {
+        flex-direction: column;
+    }
+    .donations__form {
+        margin-bottom: 70px;
+    }
+    .shop__photo {
+        display: none;
+    }
+    .shop__photo-tablet {
+        display: inline;
+    }
+    .shop__title {
+        margin-bottom: 68px;
+    }
+    .shop__box {
+        padding-bottom: 20px;
+        max-width: 328px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 10px;
+        margin-right: 33px;
+    }
+    .shop__logos, .shop__wrapper {
+        max-width: 300px;
+        margin: 0 auto 35px;
+    }
+    .shop {
+        padding-bottom: 130px;
+    }
+    .shop__slick-prev,
+    .shop__slick-next {
+        top: -110px;
+    }
+    .reference {
+        padding-bottom: 110px;
+    }
+    .reference__block {
+        max-width: 630px;
+    }
+    .reference__wrapper {
+        max-width: 363px;
+    }
+    .reference__input {
+        padding: 30px 0 30px 30px;
+        max-width: 363px;
+    }
+    .reference__button {
+        max-width: 267px;
+        min-height: 82px;
+    }
+    .footer {
+        padding-bottom: 70px;
+    }
+}
+@media all and (max-width: 320px) {
+    .container {
+        max-width: 290px;
+    }
+    .head {
+        padding: 20px 0 67px 0;
+        background-image: url(../image/bg__blur-mobile.png);
+        background-size: 360px auto;
+    }
+    .head::before {
+        content: url(../image/bg__main-mobile.png);
+        top: 64px;
+        bottom: auto;
+        right: 0;
+    }
+    .head__container {
+        align-items: flex-start;
+        margin-bottom: 52px;
+    }
+    .head__items {
+        max-width: 118px;
+        font-size: 10px;
+        padding-top: 35px;
+    }
+    .head__text::before {
+        top: -35px;
+    }
+    .head__text-peace::before {
+        content: url(../image/head__peace-mobile.svg);
+        left: -8px;
+    }
+    .head__text-love::before {
+        content: url(../image/head__love-mobile.svg);
+        left: -4px;
+    }
+    .head__text-guitar::before {
+        content: url(../image/head__guitar-mobile.svg);
+        left: 6px;
+    }
+    .head__ukraine {
+        font-size: 12px;
+        padding-right: 32px;
+        max-width: 136px;
+        width: 100%;
+    }
+    .head__ukraine::after {
+        content: url(../image/head__ukraine-mobile.svg);
+        top: 0;
+        right: 0;
+    }
+    .head__title {
+        max-width: 198px;
+        font-size: 21px;
+    }
+    .head__subtitle {
+        font-size: 16px;
+    }
+    .head__description {
+        font-size: 12px;
+       max-width: 188px;
+        width: 100%;
+    }
+    .head__block {
+        display: none;
+    }
+    .head__box,
+    .head__button-play {
+        display: none;
+    }
+    .additional,
+    .additional__block,
+    .additional__button,
+    .additional__button-play {
+        display: block;
+    }
+    .additional {
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .additional__block {
+        @include flex(flex,space-between,center);
+        max-width: 290px;
+        padding: 15px 0 10px 0;
+    }
+    .head__wrapper-form,
+    .head__input {
+        max-width: 147px;
+    }
+    .head__input {
+        padding: 14px 0 14px 10px;
+    }
+    .head__input::placeholder {
+        font-size: 14px;
+    }
+    .additional__button {
+        max-width: 143px;
+        min-height: 50px;
+        font-size: 14px;
+        margin: 0;
+    }
+    .about {
+        padding: 55px 0 85px 0;
+        background-image: url(../image/about__logo-mobile.png);
+        background-size: 107px auto;
+        background-position: 115px 1205px
+    }
+    .about__title {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+    .about__texts {
+        margin-bottom: 20px;
+    }
+    .about__content {
+        column-gap: 0;
+        row-gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+    .about__box {
+        padding: 20px 0 0 0;
+    }
+    .about__wrapper {
+        margin-bottom: 70px;
+    }
+    .about__inner {
+        flex-direction: column;
+    }
+    .about__title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    .about__span {
+        font-size: 24px;
+    }
+    .guitar {
+        padding: 0 0 70px 0;
+        background-image: url(../image/guitar__bg-mobile.png);
+        background-size: 320px auto;
+        background-position: 0 0;
+    }
+    .guitar__container {
+        min-height: 170px;
+        margin-bottom: 30px;
+    }
+    .guitar__button {
+        max-width: 241px;
+        min-height: 60px;
+    }
+    .help {
+        padding: 30px 0 320px 0;
+    }
+    .help::before {
+        content: url(../image/help__pooster-mobile.jpg);
+        bottom: -130px;
+        right: 8px;
+    }
+    .help__title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .help__text_last {
+        margin-bottom: 30px;
+    }
+    .help__button {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+    .donations {
+        padding: 190px 0 70px 0;
+    }
+    .donations__title {
+        max-width: 193px;
+        width: 100%;
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    .donations__subtitle {
+        margin-bottom: 20px;
+    }
+    .donations__form {
+        margin-bottom: 40px;
+    }
+    .donations__box {
+        margin-bottom: 20px;
+    }
+    .donations__input {
+        padding: 16px 0 16px 20px;
+    }
+    .donations__input::placeholder {
+        font-size: 14px;
+    }
+    .donations__button {
+        min-height: 69px;
+    }
+    .donations__subtitle {
+        margin-bottom: 10px;
+    }
+    .donations__text_last {
+        margin-bottom: 20px;
+    }
+    .donations__item {
+        margin-bottom: 10px;
+    }
+    .donations__span-item {
+        font-size: 14px;
+    }
+    .donations__wrapper {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+    .donations__statistic {
+        padding: 13px 0 13px 10px;
+        min-height: 41px;
+    }
+    .donations__statistic::before {
+        max-width: 91px;
+        min-height: 15px;
+        top: 13px;
+        left: 10px;
+    }
+    .donations__statistic::after {
+        top: 20px;
+        height: 20px;
+    }
+    .shop__title {
+        font-size: 30px;
+        margin-bottom: 98px;
+    }
+    .shop .slick-list {
+        margin-right: 0;
+    }
+    .shop__box {
+        max-width: 289px;
+        margin-right: 0;
+    }
+    .shop__photo-tablet {
+        display: none;
+    }
+    .shop__photo-mobile {
+        display: inline;
+        margin-bottom: 23px;
+    }
+    .shop__logos, .shop__wrapper {
+        max-width: 265px;
+        margin: 0 auto 28px;
+    }
+    .shop__logo {
+        font-size: 16px;
+    }
+    .shop__text {
+        font-size: 16px;
+    }
+    .shop__sizes {
+        max-width: 159px;
+    }
+    .shop__blocks {
+        max-width: 120px;
+    }
+    .shop__subtitle {
+        margin-right: 5px;
+    }
+    .shop__inner {
+        max-width: 265px;
+    }
+    .shop__button {
+        max-width: 129px;
+        min-height: 40px;
+    }
+    .shop__price {
+        font-size: 25px;
+    }
+    .shop__slick-prev, .shop__slick-next {
+        position: absolute;
+        top: -70px;
+        right: auto;
+        left: auto;
+        max-width: 50px;
+        width: 100%;
+        min-height: 30px;
+    }
+    .shop__slick-prev {
+        left: 85px;
+    }
+    .shop__slick-next {
+        right: 70px;
+    }
+    .shop {
+        padding-bottom: 70px;
+    }
+    .reference {
+        padding-bottom: 40px;
+    }
+    .reference__block {
+        padding: 30px 0 30px 0;
+        display: flex;
+    }
+    .reference__title {
+        font-size: 30px;
+    }
+    .reference__span {
+        font-size: 30px;
+    }
+    .reference__wrapper {
+        max-width: 169px;
+    }
+    .reference__button {
+        max-width: 121px;
+        min-height: 40px;
+        font-size: 12px;
+    }
+    .reference__input {
+        padding: 9px 0 9px 10px;
+        max-width: 169px;
+    }
+    .footer__items {
+        max-width: 195px;
+        font-size: 16px;
+        padding-top: 57px;
+        margin-bottom: 30px;
+    }
+    .footer__peace::before {
+        content: url(../image/head__peace-tablet.svg);
+        top: -56px;
+        left: -8px;
+    }
+    .footer__love::before {
+        content: url(../image/head__love-tablet.svg);
+        top: -56px;
+        left: -7px;
+    }
+    .footer__guitar::before {
+        content: url(../image/head__guitar-tablet.svg);
+        top: -56px;
+        left: 8px;
+    }
+    .footer__text_last {
+        margin-bottom: 100px;
+    }
+    .footer__copy {
+        font-size: 14px;
+    }
+    .footer__design {
+        font-size: 12px;
+    }
+
+}
+
+
